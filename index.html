@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Doug Denhart Deathmatch</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <!-- Jumbotron Header -->
@@ -19,20 +22,53 @@
     <!-- main content area -->
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+
+            <!-- Pick a character and fight heading -->
+            <div class="col-md-12">
                 <h2 class="text-center">Pick a character and Fight to the DEATH!</h2><hr><br><br>
-            </div>    
-            <div class="col-lg-12 text-center">
-                <img class="img-rounded" src="assets\images\KyleM.jpg" alt="Kyle">
-                <img class="" src="assets\images\Aaron.png" alt="Aaron">
-                <img class="" src="assets\images\Taco.png" alt="Taco">
-                <img class="" src="assets\images\DougD.jpg" alt="DougD">
-                
+            </div> 
+            
+            <!-- kyle -->
+            <div class="col-md-3 text-center">                
+                <img src="assets\images\KyleM.jpg" class="img-responsive kyle" alt="Kyle">
+                <h4>Kyle</h4>
+            </div>
+            
+            <!-- aaron -->
+            <div class="col-md-3 text-center">
+                <img src="assets\images\Aaron.png" class="img-responsive aaron" alt="Aaron">
+                <h4 class="">Aaron</h4>
+            </div>
 
+            <!-- taco -->
+            <div class="col-md-3 text-center">
+                <img src="assets\images\Taco.png" class="img-responsive taco" alt="Taco">
+                <h4>Taco</h4>
+            </div>
 
+            <!-- doug -->
+            <div class="col-md-3 text-center">
+                <img src="assets\images\DougD.jpg" class="img-responsive doug" alt="DougD">
+                <h4>Doug</h4>
+            </div>        
+
+        </div>
+
+        <div class="row">
+            <div class="col-md 12 text-center">
+                <button class="btn btn-danger"><h3>Attack</h3></button>
             </div>
         </div>
+
+        <!-- opponents go here after attacker is selected -->
+        <div class="row">
+                <div class="col-md 12 text-center">
+                    
+                </div>
+            </div>
+
     </div>
+    
     
 </body>
 </html>
