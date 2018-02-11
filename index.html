@@ -12,62 +12,38 @@
 </head>
 <body>
     <!-- Jumbotron Header -->
-    <div class="jumbotron jumbotron-fluid">
+    <!-- ___________________________________________________________________________________________________________________________________________________________________ -->
+    <div class="jumbotron text-center jumbotron-fluid">
         <div class="container">
             <h1 class="display-3 text-center">Doug Denhart Deathmatch</h1>
-            <p class="lead text-center">Who will die first?</p>
+            <h3 class="lead text-center what">Pick an attacker</h3>
         </div>
     </div>
 
-    <!-- main content area -->
+    <!-- main content area-->
+    <!-- _____________________________________________________________________________________________________________________________________________________________________ -->
+    
+    
     <div class="container">
+        <!-- loads characters -->
+        <div class="row text-center" id="characters">
+        </div><br><br> 
+        
+        <div class="row text-center" id="myBattleRow"></div>
+
+        <!-- button is here -->
         <div class="row">
-
-            <!-- Pick a character and fight heading -->
-            <div class="col-md-12">
-                <h2 class="text-center">Pick a character and Fight to the DEATH!</h2><hr><br><br>
-            </div> 
-            
-            <!-- kyle -->
-            <div class="col-md-3 text-center">                
-                <img src="assets\images\KyleM.jpg" class="img-responsive kyle" alt="Kyle">
-                <h4>Kyle</h4>
-            </div>
-            
-            <!-- aaron -->
-            <div class="col-md-3 text-center">
-                <img src="assets\images\Aaron.png" class="img-responsive aaron" alt="Aaron">
-                <h4 class="">Aaron</h4>
-            </div>
-
-            <!-- taco -->
-            <div class="col-md-3 text-center">
-                <img src="assets\images\Taco.png" class="img-responsive taco" alt="Taco">
-                <h4>Taco</h4>
-            </div>
-
-            <!-- doug -->
-            <div class="col-md-3 text-center">
-                <img src="assets\images\DougD.jpg" class="img-responsive doug" alt="DougD">
-                <h4>Doug</h4>
-            </div>        
-
-        </div>
-
-        <div class="row">
-            <div class="col-md 12 text-center">
-                <button class="btn btn-danger"><h3>Attack</h3></button>
+            <div class="col-md 12 text-center" id="">
+                <button class="btn btn-danger attack" id="attackBTN"><h3>Attack</h3></button>
             </div>
         </div>
 
-        <!-- opponents go here after attacker is selected -->
-        <div class="row">
-                <div class="col-md 12 text-center">
-                    
-                </div>
-            </div>
 
     </div>
+
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script> 
     
     
 </body>
