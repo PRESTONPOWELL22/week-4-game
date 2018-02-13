@@ -14,14 +14,14 @@ $(document).ready(function(){
 
         {
             name:"taco",
-            hp: 50,
+            hp: 70,
             strength: 75,
             image:"assets/images/taco.png",
         },
 
         {
             name:"aaron",
-            hp: 175,
+            hp: 100,
             strength: 100,
             image:"assets/images/aaron.png",
         },
@@ -44,7 +44,9 @@ $(document).ready(function(){
     var isHeroAlive
     // checks if the enemy is still alive
     var isEnemyAlive
+    // checks if hero is chosen
     var isHeroChosen
+    // checks if enemy is chosen
     var isEnemyChosen
 
     // function that starts the game
@@ -57,6 +59,8 @@ $(document).ready(function(){
             var num = Math.floor(12 / charArr.length)
             var charThing = $("<div class= 'myChar col-md-"+num+"' value='"+i+"'><img src='"+charArr[i].image+"' style='width:150px;height:150px;'/></div>")
             $("#characters").append(charThing)
+            
+            
         }
 
     }
@@ -71,15 +75,21 @@ $(document).ready(function(){
             $(this).addClass("fader")
             isHeroChosen=true
             $(".what").replaceWith("pick an enemy")
+            var hero = $("<div class='col-md-5'><img src='"+chosenHero.image+"' style='width:250px;height:250px;'></div>")
+            $("#hero").append(hero)
         }
 
         else if(isEnemyChosen === false && chosenHero.name != charArr[$(this).attr("value")].name) {
-           chosenHero=charArr[$(this).attr("value")]
-           console.log(chosenHero)
+           chosenEnemy=charArr[$(this).attr("value")]
+           console.log(chosenEnemy)
            $(this).addClass("fader")
            isEnemyChosen=true
-           $(".what").replaceWith("FIGHT!!!")
+           var enemy = $("<div class='col-md-5'><img src='"+chosenEnemy.image+"' style='width:250px;height:250px;'></div>")
+           $("#enemy").append(enemy)
+           
        }
+
+       
 
 
 
@@ -90,8 +100,12 @@ $(document).ready(function(){
     // function to set up battlefeild
     // ______________________________________________________________________________________________________________
 
+    // function battleFeild(){
+    //     var battleThing = $("<div class= 'myChar col-md-5' value='"+i+"'><img src='"+chosenHero.image+"' style='width:250px;height:250px;'/></div>")
+    //         $("#hero").append(battleThing)
 
-
+    // }    
+   
 
 
 
@@ -103,12 +117,18 @@ $(document).ready(function(){
         var num2 = Math.floor(Math.random()*20)
         chosenEnemy.hp -= num1
         $("#enemyHP").text(chosenEnemy.hp)
-        $("#myBattleRow").append("<p>" + chosenHero.name + "attacked" + chosenEnemy.name + "for" + num1 + "points!</p>")
+        $("#attack").html("<p>" + chosenHero.name + " attacked " + chosenEnemy.name + " for " + num1 + " points!</p>")
         chosenHero.hp -= num2
         $("#heroHP").text(chosenHero.hp)
-        $("#myBattleRow").append("<p>" + chosenHero.name + "attacked" + chosenEnemy.name + "for" + num1 + "points!</p>")
-        console.log(chosenHero.hp)
-
+        $("#attacked").html("<p>" + chosenEnemy.name + " attacked " + chosenHero.name + " for " + num2 + " points!</p>")
+        console.log(chosenEnemy.hp)
+        if (chosenHero.hp <= 0){
+            alert("you loose")
+        }
+        else if (chosenEnemy.hp <= 0){
+            alert("you win")
+        }
+        
     })
  
 
@@ -117,10 +137,10 @@ $(document).ready(function(){
     // ______________________________________________________________________________________________________________
 
     initGame();
+    
+    
 
 })
-
-
 
 
 

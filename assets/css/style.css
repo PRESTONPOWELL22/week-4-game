@@ -15,3 +15,7 @@ h4 {
 .fader {
     opacity: 0.4;
 }
+
+#attack{
+    text-align: center;
+}
